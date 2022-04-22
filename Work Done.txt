@@ -1,0 +1,123 @@
+All NIT Questions:-
+
+// basic
+
+ 1. C "Hello, World!" Program
+ 2. C program for Input/output of Integer, Character and Floating point numbers
+ 3. C Program to Add Two Integers
+ 4. C Program to Multiply two Floating Point Numbers
+ 5. C Program to Find ASCII Value of a Character
+ 6. C Program to Compute Quotient and Remainder
+ 7. C Program to Find the Size of int, float, double and char
+ 8. C Program to Swap Two Numbers using and without using third variable
+ 9. C Program to find area of a triangle
+10. C Program to find area of a circle
+11. C Program to find area of a Square
+12. C program to find square root of a number using sqrt function
+13. C Program to calculate gross salary of a person.
+    Where DA is 12% of basic Salary, HR is 7% of basic Salary and TA is 5% of Basic Salary.
+    // if else
+14. C Program to Check Whether a Number is Even or Odd
+15. C Program to Check Whether a Character is Vowel or Consonant
+16. C Program to Find the Largest Number Among Two Numbers
+17. C Program to Find the Largest Number Among Three Numbers
+18. C Program to Check Leap Year.
+19. Write a C program to check whether a character is uppercase or lowercase alphabet.
+20. Write a C program to input week number print week day.
+21. Write a C program to input month number and print number of days in that month.
+22. Write a C program to find all roots of a quadratic equation.
+23. Write a C program to calculate profit or loss.
+24. Write a C program to input marks of five subjects Physics, Chemistry, Biology,
+    Mathematics and Computer. Calculate percentage and grade according to following:
+    Percentage >= 90% : Grade A
+    Percentage >= 80% : Grade B
+    Percentage >= 70% : Grade C
+    Percentage >= 60% : Grade D
+    Percentage >= 40% : Grade E
+    Percentage < 40% : Grade F
+25. Write a C program to input basic salary of an employee and
+    calculate its Gross salary according to following:
+    Basic Salary <= 10000 : HRA = 20%, DA = 80%
+    Basic Salary <= 20000 : HRA = 25%, DA = 90%
+    Basic Salary > 20000 : HRA = 30%, DA = 95%
+26. Write a C program to input electricity unit charges and
+    calculate total electricity bill according to the given condition:
+    For first 50 units Rs. 0.50/unit
+    For next 100 units Rs. 0.75/unit
+    For next 100 units Rs. 1.20/unit
+    For unit above 250 Rs. 1.50/unit
+    An additional surcharge of 20% is added to the bill
+    // ternary operator
+27. Write a C program to find maximum between two numbers using conditional operator.
+28. Write a C program to find maximum between three numbers using conditional operator.
+29. Write a C program to check whether a number is even or odd using conditional operator.
+30. Write a C program to check whether year is leap year or not using conditional operator.
+31. Write a C program to check whether character is an alphabet or not using conditional operator.
+    // for loop
+32. C Program to print all the number up to n
+33. C Program to Calculate the Sum of Natural Numbers
+34. C Program to print all the even number up to n
+35. C Program to print all the odd number up to n
+36. C Program to print sum of all even & odd numbers up to n
+37. C Program to Find Factorial of a Number
+38. C Program to Generate Multiplication Table
+39. C Program to Display Fibonacci Sequence
+40. C Program to print list of all Prime Number up to a certain Limit.
+41. C Program to find sum of prime numbers
+42. C program to print right triangle star pattern series
+    x
+    x x
+    x x x
+    x x x x
+43. C program to print equilateral triangle or pyramid star pattern
+       x 
+      x x
+     x x x 
+    x x x x
+44. C program to print Floyd's triangle
+    1
+    2 3
+    4 5 6
+    7 8 9 10
+    //while loop..do while loop
+45. Program to print all the number up to n
+46. C Program to Calculate the Sum of Natural Numbers
+47. C Program to print all the even number up to n
+48. C Program to print all the odd number up to n
+49. C Program to print sum of all even & odd numbers up to n
+50. C Program to Find Factorial of a Number
+51. C Program to Generate Multiplication Table
+52. C Program to Display Fibonacci Sequence
+53. C Program to print list of all Prime Number up to a certain Limit.
+54. C Program to find sum of prime numbers
+55. C Program to Count Number of Digits in an Integer
+56. C Program to Reverse a Number
+57. C Program to Calculate the Power of a Number
+58. C Program to Check Whether a Number is Palindrome or Not
+59. C Program to Check Armstrong Number
+60. C Program to Display Factors of a Number
+    // switch case
+61. C Program to find wheather a character is vowel or consonant.
+62. C Program to Make a Simple calculator.
+63. C program to check whether number is EVEN or ODD using switch.
+64. C program to find number of days in a month using switch case.
+65. C program to read weekday number and print weekday name using switch.
+    // array
+66. C Program to Calculate Average of n (n < 10) numbers using arrays
+67. C Program to Find Largest Element of an Array
+68. Write a program in C to find the maximum and minimum element in an array.
+69. Write a program in C to separate odd and even integers in separate arrays.
+70. Write a program in C to sort elements of array in ascending order.
+71. C Program to Add Two Matrix Using Multi-dimensional Arrays
+72. C Program to multiply Two Matrix Using Multi-dimensional Arrays
+    // strings
+73. Program to Reverse a String
+74. C Program to Find the Length of a String
+75. C program to Concatenate Two Strings
+76. C Program to Copy a String
+    ////Extras
+ 1. Print odd elements of the array.
+ 2. Print even elements of the array.
+ 3. Print the prime numbers of the array.
+ 4. Print the numbers stored at the prime number locations of the array.
+ 5. Print the sum of the odd numbered elements of the array and the even numbered elements of the array.
