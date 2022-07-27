@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
@@ -145,6 +146,170 @@ int main()
 	// int b = (1,2,3,4,5);
 	// printf("%d",a);
 	// printf("%d",b);
+
+	// 19/07/2022
+
+	// int a = 5;
+	// int b= a++ + 1;
+	// printf("%d%d",a,b);
+
+	// int a = 5;
+	// int b= a+ ++1;
+	// printf("%d%d",a,b);
+
+	// int i = 5;
+	// int var = sizeof(i++);
+	// printf("%d%d", i, var);
+
+	// int var;
+	// int num;
+	// num = (var=15, var+35);
+	// printf("%d",num);
+
+	// int var;
+	// int num;
+	// num = var=15, var+35;
+	// printf("%d",num);
+
+	// int var = (printf("%s\n","Hello"),5);
+	// printf("%d",var);
+
+	// char c = 255;
+	// c = c+101;
+	// printf("%d",c);
+	// printf("%c",c);
+
+	// printf("%s","Hello");
+	// printf("%20s","Hello");
+
+	// float f = 362.1736;
+	// printf("%0.0f",f);
+	// printf("%0.10f",f);
+	// printf("%0.2f",f);
+	// printf("%2.2f",f);
+	// printf("%5.2f",f);
+
+	// static int i=5;
+	// static i =6;
+	// printf("%d",i);
+
+	// 23/07/2022
+
+	// if(0) printf("Hello");
+	// else printf("Hi");
+
+	// Triangle problem
+	//  float a,b,c;
+	//  scanf("%f%f%f",&a,&b,&c);
+	//  if(a==b || a==c || b==c) {
+	//  	if(a==c && a==b && b==c) printf("It's an Equilateral Triangle");
+	//  	else printf("It's an Iscoscales Triangle");
+	//  }
+	//  else printf("It's a Scalene Triangle");
+
+	// int a;scanf("%d",&a);
+	// if((a%5==0) && (a%11==0)) printf("Its divisible");
+	// else printf("Not divisible");
+
+	// vowel consonant
+	//  char c;
+	//  scanf("%c",&c);
+	//  if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c=='A' || c=='E' || c=='I' || c=='O' || c=='U')
+	//  printf("Its a Vowel");
+	//  else printf("Its a Consonant");
+
+	// Roots of an equation
+	//  float a,b,c,x1,x2,d;
+	//  scanf("%f%f%f",&a,&b,&c);
+
+	// d = (b*b) - 4*a*c;
+	// x1 = ((-b) + sqrt(d))/(2*a);
+	// x2 = ((-b) - sqrt(d))/(2*a);
+	// if(d>=0){
+	// 	if(d>0) printf("Roots are real and unique, roots are %0.2f and %0.2f", x1,x2);
+	// 	else printf("Roots are real and equal, roots are %0.2f and %0.2f", x1, x2);
+	// }
+	// else if(d<0) printf("Roots are Imaginary");
+
+	// 24/07/2022 sai
+
+	// int num =8;
+	// printf("%d %d",num<<1,num>>1);
+
+	// int i =5;
+	// int a = ++i + ++i;
+	// printf("%d",a);
+
+	// int i =5;
+	// int a = ++i + ++i + ++i;
+	// printf("%d",a);
+
+	// int i = 16;
+	// i = !i>15;
+	// printf("%d",i);
+
+	// int i =5;
+	// int a = --i + --i;
+	// printf("%d",a);
+
+	// int i =5;
+	// int a = --i + --i + --i;
+	// printf("%d",a);
+
+	// int a = 2, b=2, c=0,d=2,m;
+	// m = a++ && b++ && c++ || d++;
+	// printf("%d %d %d %d %d",a,b,c,d,m);
+
+	// int i = 5;
+	// int a = --i + ++i - i-- + --i;
+	// printf("%d",a);
+
+	// int i = 5;
+	// int a = i++ + ++i;
+	// printf("%d",a);
+
+	// int i = 5;
+	// int a = i-- - --i;
+	// printf("%d",a);
+
+	// unsigned int num = -4;
+	// printf("%d", ~num);
+
+	// int x =2;
+	// (x & 1)? printf("True"): printf("False");
+
+	// int x =2;
+	// (x & 2)? printf("True"): printf("False");
+
+	// int x =2;
+	// (x | 1)? printf("True"): printf("False");
+
+	// int x =2;
+	// (x ^ 1)? printf("True"): printf("False");
+
+	// int a =7,b=4,c=2;
+	// printf("%d",a|b&c);
+
+	// int a = NULL - true;
+	// printf("%d",a);
+
+	// printf("%d", 3*2--);
+
+	// int a =1,b=3,c;
+	// c = b<<a;
+	// b = c * (b *(++a)--);
+	// a = a>>b;
+	// printf("%d",b);
+
+	// int i =10;
+	// i++;
+	// i*i;
+	// printf("%d",i);
+
+	// #define x =
+	// int a;
+	// a x 5;
+	// printf("%d",a);
 
 	return 0;
 }

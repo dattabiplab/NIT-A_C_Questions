@@ -400,3 +400,148 @@ WAP to calculate Profit & Loss
 
 WAP to calculate Gross Salary
 */
+
+//	19/07/2022
+/*
+int a = 5;
+int b= a++ + 1;
+printf("%d%d",a,b); -> (6,6) //[Loader is taking input chunk by chunk , space between operators is also loaded]
+
+int a = 5;
+int b= a+ ++1;
+printf("%d%d",a,b); -> logically it will give (5,7) but it gives an error due to (5,7)
+
+int i = 5;
+int var = sizeof(i++);
+printf("%d%d", i, var);-> (5,4) //[inside sizeof() operator any increment or decrement does not work]
+
+int var;
+int num;
+num = (var=15, var+35);
+printf("%d",num); -> 50 // var=15+35 =50
+
+int var;
+int num;
+num = var=15, var+35;
+printf("%d",num);
+
+int var = (printf("%s\n","Hello"),5);
+printf("%d",var); -> 1st line Hello will be printed in 2nd line 5 will be printer since in brackets last element will store in variables
+
+char c = 255;
+c = c+101;
+printf("%d",c); -> after moving full cycle in 'unsigned char' cycle it will give the anscii int value of the char
+printf("%c",c); -> it will give the anscii value of the char
+
+printf("%s","Hello"); -> it will print hello normally
+printf("%20s","Hello"); -> it will print hello after (20-5(hello)) spaces
+
+float f = 362.1736;
+printf("%0.0f",f); -> after decimal the number written will be the precision of the floating number
+printf("%0.10f",f);
+printf("%0.2f",f);
+printf("%2.2f",f);
+printf("%5.2f",f);
+
+int i =5; ☑
+int i;	✖ [after declaration we can't declare again]
+int i = 6; 	❌ [do]
+
+static int i =5;
+static int i;
+static int i =6; ❌ [in static we can't change the value of the variable]
+
+int i; -> declaration
+i = 5; -> definition / initialisation
+*/
+
+// 23/07/2022 sau
+/*
+if(0) printf("Hello");
+else printf("Hi"); -> hi //since zero gives as a false value hence it will go for else case
+
+WAP to check a triangle is equilateral , isoscale or scalene
+WAP to check if a number is divisible by 5 and 11
+WAP to check a character is vowel or consonant
+WAP to check roots of an quadratic equation
+*/
+
+// 24/07/2022 sai
+/*
+int num =8;
+printf("%d %d",num<<1,num>>1); -> 16 4
+
+int i =5;
+int a = ++i + ++i;
+printf("%d",a);
+
+int i =5;
+int a = ++i + ++i + ++i;
+printf("%d",a);
+
+int i = 16;
+i = !i>15;
+printf("%d",i);
+
+int i =5;
+int a = --i + --i;
+printf("%d",a);
+
+int i =5;
+int a = --i + --i + --i;
+printf("%d",a);
+
+int a = 2, b=2, c=0,d=2,m;
+m = a++ && b++ && c++ || d++;
+printf("%d %d %d %d %d",a,b,c,d,m);
+
+int i = 5;
+int a = --i + ++i - i-- + --i;
+printf("%d",a);
+
+int i = 5;
+int a = i++ + ++i;
+printf("%d",a);
+
+int i = 5;
+int a = i-- - --i;
+printf("%d",a);
+
+unsigned int num = -4;
+printf("%d", ~num);
+
+int x =2;
+(x & 1)? printf("True"): printf("False");
+
+int x =2;
+(x & 2)? printf("True"): printf("False");
+
+int x =2;
+(x | 1)? printf("True"): printf("False");
+
+int x =2;
+(x ^ 1)? printf("True"): printf("False");
+
+int a =7,b=4,c=2;
+printf("%d",a|b&c);
+
+int a = NULL - true;
+printf("%d",a);
+
+printf("%d", 3*2--);
+
+int a =1,b=3,c;
+c = b<<a;
+b = c * (b *(++a)--);
+a = a>>b;
+printf("%d",b);
+
+	int i =10;
+i++;
+i*i;
+printf("%d",i);
+
+	#define x =
+int a;
+a x 5;
+printf("%d",a);
