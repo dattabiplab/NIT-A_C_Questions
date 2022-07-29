@@ -469,79 +469,96 @@ WAP to check roots of an quadratic equation
 // 24/07/2022 sai
 /*
 int num =8;
-printf("%d %d",num<<1,num>>1); -> 16 4
+printf("%d %d",num<<1,num>>1); -> 16 4 //1st 8 will be shifted to left side //2nd 8 will be shifted to right side
 
 int i =5;
 int a = ++i + ++i;
-printf("%d",a);
+printf("%d",a); ->14(6(+1)+7)
+//if the 2nd operator is pre-increment of pre-decrement then the 1st i will get a +1 or -1 respectively
 
 int i =5;
 int a = ++i + ++i + ++i;
-printf("%d",a);
+printf("%d",a);-> 22(6(+1)+7+8)
 
 int i = 16;
-i = !i>15;
-printf("%d",i);
+i = !i>15; //-> not i(=16)=> i=0>15 =0
+printf("%d",i); -> 0
+// 1st precedene 2nd associativity
 
 int i =5;
 int a = --i + --i;
-printf("%d",a);
+printf("%d",a); -> 6(3(4-1)+3)
 
 int i =5;
 int a = --i + --i + --i;
-printf("%d",a);
+printf("%d",a); -> 8(3(4-1)+3+2)
 
 int a = 2, b=2, c=0,d=2,m;
 m = a++ && b++ && c++ || d++;
-printf("%d %d %d %d %d",a,b,c,d,m);
+printf("%d %d %d %d %d",a,b,c,d,m); -> 3,3,1,3,1
+//m = 2 && 2 && 0 ||2
+	//= 1 && 0 ||2
+	//= 0 || 2 =1
 
 int i = 5;
 int a = --i + ++i - i-- + --i;
-printf("%d",a);
+printf("%d",a); -> 8
+// 5(4+1) +5 -5 +3 = 8
 
 int i = 5;
 int a = i++ + ++i;
-printf("%d",a);
+printf("%d",a); -> 13
+// 6(5+1) +7
 
 int i = 5;
 int a = i-- - --i;
-printf("%d",a);
+printf("%d",a); -> 1
+// 4(5-1) -3
 
 unsigned int num = -4;
-printf("%d", ~num);
+printf("%d", ~num); -> 3
+// -4 => -100 (in binary)
+// ~ -4 => +011 =3
 
 int x =2;
-(x & 1)? printf("True"): printf("False");
+(x & 1)? printf("True"): printf("False"); ->False
+//10 & 01 = 0
 
 int x =2;
-(x & 2)? printf("True"): printf("False");
+(x & 2)? printf("True"): printf("False"); ->True
 
 int x =2;
-(x | 1)? printf("True"): printf("False");
+(x | 1)? printf("True"): printf("False"); ->True
+// 10 | 01 = 11=3(true)
 
 int x =2;
-(x ^ 1)? printf("True"): printf("False");
+(x ^ 1)? printf("True"): printf("False"); ->True
 
 int a =7,b=4,c=2;
-printf("%d",a|b&c);
+printf("%d",a|b&c); -> 7
+//7|4&2 = 7|4 = 7
+// 100 & 10 = 100 =4
+// 111 | 100 = 111 =7
 
 int a = NULL - true;
-printf("%d",a);
+printf("%d",a); -> -1 (nothing -1)
 
-printf("%d", 3*2--);
+printf("%d", 3*2--); -> error
+//since 2--(2=2-1) is not valid and alse 3*2-- is not stored on any actual stroage  since dont have any variable
 
 int a =1,b=3,c;
 c = b<<a;
 b = c * (b *(++a)--);
 a = a>>b;
-printf("%d",b);
+printf("%d",b); -> 36 (logically)
 
-	int i =10;
+int i =10;
 i++;
 i*i;
-printf("%d",i);
+printf("%d",i); -> 11
 
-	#define x =
+#define x =
 int a;
-a x 5;
-printf("%d",a);
+a x 5; //replaces x by 5
+printf("%d",a); -> 5
+*/
