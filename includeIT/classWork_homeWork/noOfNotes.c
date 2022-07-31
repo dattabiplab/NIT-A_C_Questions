@@ -5,6 +5,7 @@
 int main()
 {
 	int rs,n500,n100,n50,n20,n10,n5,n2,n1;
+	printf("Enter the amount of money: ");
 	scanf("%d", &rs);
 	n500=n100=n50=n20=n10=n5=n2=n1=0;
 

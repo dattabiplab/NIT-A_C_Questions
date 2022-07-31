@@ -198,38 +198,10 @@ int main()
 	// if(0) printf("Hello");
 	// else printf("Hi");
 
-	// Triangle problem
-	//  float a,b,c;
-	//  scanf("%f%f%f",&a,&b,&c);
-	//  if(a==b || a==c || b==c) {
-	//  	if(a==c && a==b && b==c) printf("It's an Equilateral Triangle");
-	//  	else printf("It's an Iscoscales Triangle");
-	//  }
-	//  else printf("It's a Scalene Triangle");
-
-	// int a;scanf("%d",&a);
-	// if((a%5==0) && (a%11==0)) printf("Its divisible");
-	// else printf("Not divisible");
-
+	// Triangle side problem: equilateral,isosceles or Scalene
+	// Divisible by both 5 and 11 or not
 	// vowel consonant
-	//  char c;
-	//  scanf("%c",&c);
-	//  if(c=='a' || c=='e' || c=='i' || c=='o' || c=='u' || c=='A' || c=='E' || c=='I' || c=='O' || c=='U')
-	//  printf("Its a Vowel");
-	//  else printf("Its a Consonant");
-
 	// Roots of an equation
-	//  float a,b,c,x1,x2,d;
-	//  scanf("%f%f%f",&a,&b,&c);
-
-	// d = (b*b) - 4*a*c;
-	// x1 = ((-b) + sqrt(d))/(2*a);
-	// x2 = ((-b) - sqrt(d))/(2*a);
-	// if(d>=0){
-	// 	if(d>0) printf("Roots are real and unique, roots are %0.2f and %0.2f", x1,x2);
-	// 	else printf("Roots are real and equal, roots are %0.2f and %0.2f", x1, x2);
-	// }
-	// else if(d<0) printf("Roots are Imaginary");
 
 	// 24/07/2022 sai
 
@@ -310,6 +282,106 @@ int main()
 	// int a;
 	// a x 5;
 	// printf("%d",a);
+
+	// 31/07/2022
+
+	// int i =5;
+	// int b;
+	// b = --i + ++i - --i + ++i + ++i - --i;
+	// printf("%d",b);
+
+	// int i =5;
+	// int b;
+	// b = i++ + i-- + i-- - i++ + --i - i++;
+	// printf("%d",b);
+
+	// int i =5;
+	// int b;
+	// b = ++i + ++i + ++i + ++i;
+	// printf("%d",b);
+
+	// int x = 0;
+	// if(x==x) printf("hi");
+	// else printf("hello");
+
+	// #define FALSE -1
+	// #define null 0
+	// #define TRUE 1
+	// if (null) printf("null");
+	// else if (FALSE) printf("true");
+	// else printf("false");
+
+	// int i=0,j=0;
+	// if(i++==j++) printf("%d,%d",i--,j--);
+	// else printf("%d,%d",i,j);
+
+	// int i=0,j=1,k=0;
+	// if(++k,j,i++) printf("%d,%d,%d",i,j,k);
+
+	// if(true) printf("true");
+	// else printf("false");
+
+	// if("true") printf("true");
+	// else printf("false");
+
+	// if(printf("0")) printf("hi");
+	// else printf("hello");
+
+	// #define false 0
+	// if(printf("0")==false) printf("hi");
+	// else printf("hello");
+
+	// int i=5,j=4;
+	// if(!printf("")) printf("%d,%d",i,j);
+	// else printf("%d,%d",i++,++j);
+
+	// int i=5,j=4;
+	// if(!printf(" ")) printf("%d,%d",i,j);
+	// else printf("%d,%d",i++,++j);
+
+	// int i=5,j=5;
+	// if(i==j);
+	// printf("equal");
+	// else printf("not");
+
+	// int i =25;
+	// if(i==25);
+	// i=50;
+	// if(i==25) i=i+1;
+	// else i =i+1;
+	// printf("%d",i);
+
+	// int i =5,j=6,k=7;
+	// if(i>j==k) printf("%d,%d,%d",i++,++j,--k);
+	// else printf("%d,%d,%d",i,j,k);
+
+	// int i=2;
+	// if(i==(1,2)) printf("1");
+	// else printf("2");
+
+	// int i=2;
+	// if(i==1,2) printf("1");
+	// else printf("2");
+
+	// int i=5;
+	// if(i=i-5>4) printf("1");
+	// else printf("2");
+
+	// int i;
+	// if(scanf("%d",i)) printf("%d",i);
+	// else printf("2");
+
+	// int i;
+	// if(scanf("%d",&i)) printf("%d",i);
+	// else printf("2");
+
+	// if(sizeof(0)) printf("0");
+	// else printf("1");
+
+	// char c = '\0';
+	// int a = int(c);
+	// if(a) printf("%d",a);
+	// else printf("b");
 
 	return 0;
 }

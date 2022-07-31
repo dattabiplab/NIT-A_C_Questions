@@ -562,3 +562,143 @@ int a;
 a x 5; //replaces x by 5
 printf("%d",a); -> 5
 */
+
+// 31/07/2022 SAI
+/*
+int i =5;
+int b;
+b = --i + ++i - --i + ++i + ++i - --i;
+printf("%d",b); ->12
+//b = 5(4+1) + 5 - 4 + 5 + 6 -5 = 12
+
+int i =5;
+int b;
+b = i++ + i-- + i-- - i++ + --i - i++;
+printf("%d",b); ->12
+//b = 5 + 6 + 5 + 5 - 4 + 4 - 4 = 12
+
+int i =5;
+int b;
+b = ++i + ++i + ++i + ++i;
+printf("%d",b); ->31
+//b = 7(6+1) + 7 + 8 + 9 = 31
+
+int x = 0;
+if(x==x) printf("hi");
+else printf("hello"); -> hii	//since (0==0) is true hence if part executes
+
+#define FALSE -1
+#define null 0
+#define TRUE 1
+if (null) printf("null");	 //0 hence zero(false)
+else if (FALSE) printf("true"); 	//-1 non zero hence true prints
+else printf("false"); -> true
+
+int i=0,j=0;
+if(i++==j++) printf("%d,%d",i--,j--);
+else printf("%d,%d",i,j); -> 1,1
+
+int i=0,j=1,k=0;
+if(++k,j,i++) printf("%d,%d,%d",i,j,k); ->nothing will be printed
+//if(1,1,0) = (1,0) = (0)  since right to left associativity in brackets
+
+if(condition) something; //1 statement
+if(){
+	something; (1)
+	something; (2)
+	something; (3)
+} //3 statements
+
+if(true) printf("true"); -> error //since true is nothing no variable no string nothing hence gives error
+else printf("false");
+
+if("true") printf("true"); -> true //since here true is a string hence it gives a value in ascii
+else printf("false");
+
+if(printf("0")) printf("hi");
+else printf("hello");-> 0hi
+
+printf()-> gives error  //since nothing is inside printf
+
+#define false 0
+if(printf("0")==false) printf("hi");		//print executes hence gives 1
+else printf("hello"); -> 0hello			//1==0 => 0 hence goto else part
+
+int i=5,j=4;
+if(!printf("")) printf("%d,%d",i,j); 	//!(null) => !(0) =1 hence if part executes
+else printf("%d,%d",i++,++j); ->5,4
+
+int i=5,j=4;
+if(!printf(" ")) printf("%d,%d",i,j);		//!(1) since it prints a space =>0 hence else part executes
+else printf("%d,%d",i++,++j); -> 5,5 //1 space before 5,5
+
+int i=5,j=5;
+if(i==j);
+printf("equal");
+else printf("not"); -> error //since there is no previous if
+
+if(1){
+
+} is same as if(1);
+
+int i =25;
+if(i==25); //true
+i=50; // i value changed
+if(i==25) i=i+1;  //false
+else i =i+1; //else part executed
+printf("%d",i); -> 51
+
+DIFFERENT SYNTAX
+if(1);
+printf("hi");	✔
+
+if(1)
+printf("hi");	✔
+
+if(1) printf("hi");
+else printf("hello");	✔
+
+if(1);
+printf("hi");
+else printf("hello");	❌
+
+printf("hi");
+else printf("hello");	❌
+
+
+int i =5,j=6,k=7;
+if(i>j==k) printf("%d,%d,%d",i++,++j,--k);
+else printf("%d,%d,%d",i,j,k); ->5,6,7
+//5>6==7 => (0==7) => 0 hence else part executes
+
+int i=2;
+if(i==(1,2)) printf("1");		//i==2 since due to brackets 2 will be assigned since its in last position
+else printf("2");->1
+
+int i=2;
+if(i==1,2) printf("1");
+else printf("2"); ->1
+//if(0,2) since i!=1 => if(2) => 2 is non zero hence if part executes
+
+int i=5;
+if(i=i-5>4) printf("1");
+else printf("2");
+//if(i=5-5>4) since precedence of '-' is more => if(i=0>4) =>if(i=0) => if(0) hence else part
+
+int i;
+if(scanf("%d",i)) printf("%d",i);
+else printf("2"); ->garbage value(logically) //but error due to not presence of '&'
+
+int i;
+if(scanf("%d",&i)) printf("%d",i); //scanf executes and gives 1
+else printf("2"); -> value of i we enter
+
+if(sizeof(0)) printf("0"); //sizeof(int) =4 hence non zero hence if part executes
+else printf("1");-> 0
+
+char c = '\0';
+int a = int(c);
+if(a) printf("%d",a);
+else printf("b"); -> b(logically since typecasting '\0' gives 0 in ASCII)
+//but error since typecasting gives error
+*/
