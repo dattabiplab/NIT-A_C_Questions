@@ -22,7 +22,7 @@ int main()
 	}
 	if (count == 1 && n != 1 && n != 2 && n != 3)
 		printf("Not Prime");
-	else if (n != 1 && n != 2 && n != 3)
+	else if (n != 1 && n != 2 && n != 3) //otherwise it will print 2 times for n=1,2,3
 		printf("Is Prime");
 	return 0;
 }
