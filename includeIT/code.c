@@ -383,5 +383,93 @@ int main()
 	// if(a) printf("%d",a);
 	// else printf("b");
 
+	// 6/08/2022 sai
+
+	// int a,m;
+	// a = scanf("%d",&m);
+	// printf("%d",a);
+
+	// 7/08/2022 SAU
+
+	// int i=1;
+	// for(;i<5;i++) printf("%d\t",i);
+
+	// int i=1;
+	// for(;;i++) printf("%d\t",i);
+
+	// int i=1;
+	// for(;;) printf("%d\t",i);
+
+	// int i;
+	// for(i=1;i<=10;i++) printf("%d\t",i);
+
+	// int i;
+	// for(i=1;i<=10;i++);
+	// printf("%d\t",i);
+
+	// int i=1;
+	// for(;i<=5;i++)	printf("%d\t",i);
+
+	// for(int i=0,j=0;i<=5;i++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;i<5,j<3;i++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;i<5,j<3;j++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;j<3 || i<5;j++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;j<3 && i<5;j++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;j<3 && i<5;i++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;i<5 || j<3;j++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;i<5 || j<3;i++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;j<3 || i<5;i++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;i<5 && j<3;i++,j++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;j<3 && i<5;i++,j++) printf("%d %d\t",i,j);
+
+	// int i,j;
+	// for(i=1,j=0;j<3 || i<5;i++,j++) printf("%d %d\t",i,j);
+
+	// int i,j,k;
+	// for(i=1,j=0,k=0;i<5 && j<3 && k<4;i++,j++,k++) printf("%d %d %d\t",i,j,k);
+
+	// for(int i=1;i<=10;i++) printf("%d\t",i);
+	// for(int i=10;i>=1;i--) printf("%d\t",i);
+
+	// int n;
+	// printf("Enter a Number: ");
+	// scanf("%d",&n);
+	// for(int i=1;i<=10;i++) printf("%d x %d = %d\n",n,i,n*i);
+
+	// char ch;
+	// for(ch='A';ch<='Z';ch++) printf("%c\t",ch);
+
+	// char ch;
+	// for(ch='a';ch<='z';ch++) printf("%c\t",ch);
+
+	// int ch;
+	// for(ch=65;ch<=90;ch++) printf("%c\t",ch);
+
+	// printf("Even Numbers are: ");
+	// for(int i=1;i<=20;i++){
+	// 	if(i%2==0) printf("%d\t",i);
+	// }
+	// for(int i=2;i<=20;i=i+2) printf("%d\t",i);
+
 	return 0;
 }

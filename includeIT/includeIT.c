@@ -702,3 +702,188 @@ if(a) printf("%d",a);
 else printf("b"); -> b(logically since typecasting '\0' gives 0 in ASCII)
 //but error since typecasting gives error
 */
+
+// 6/08/2022 sai
+/*
+int a,m;
+a = scanf("%d",&m); -> after successfully executing scanf a stores 1
+printf("%d",a);-> 1
+
+switch
+switch (expression)
+{
+case value 1:
+	statements....
+	.....
+	break;
+
+case value 2:
+	statements....
+	.....
+	break;
+
+default:
+	default statement
+	break;
+}
+
+Rule:
+1) we cant use floating point in switch (expression) part
+2) we can use int & char in switch(expression)
+3) we can write default in any position, compiler will ignore it until it checks all conditions (cases)
+4) nested switch is also possible
+eg:-
+switch(10){
+	case (10):
+		switch(2){
+			case 2:
+				break;
+		}
+		break;
+	case (12):
+		break;
+}
+
+case 1 3 7 8 10: -> compilation error
+case (1,3,7): => case 7: (logically) -> due to (",") operator
+int month =7;
+	switch (month)
+	{
+	case (1, 3, 7): ->compiler error ->"," is not allowed in constant expression
+		printf("hello");
+		break;
+
+	default:
+		break;
+	}
+
+WAP to print number of days in a Month
+WAP to print day (monday,tuesday....)
+*/
+
+// 7/08/2022
+/*
+loops:-
+1) entry control => for, while
+2) exit control => do while
+
+FOR LOOP:-
+
+syntax:
+for (exp 1; exp 2; exp 3)
+{
+	// body
+}
+exp 1 = initialisation
+exp 2 = condition
+exp 3 = increment/ decrement/ update value
+//for a "for loop" to work exp1,2,3 nothing is needed
+
+syntaxes:
+(1)
+int i=1;
+for(;i<5;i++) printf("%d\t",i); -> 1 2 3 4
+
+(2)
+int i=1;
+for(;;i++) printf("%d\t",i); -> 1 2 3 4 5 .... infinity times
+
+(3)
+int i=1;
+for(;;) printf("%d\t",i); -> 1 1 1 .... infinity times
+
+HOW FOR LOOP WORKS?
+for(int i=1;i<=10;i++){						cycle of for loop	//(3)<-(2)<-(4)<-(3)
+		(1)  (2)  (4)
+	printf("%d",i);
+			(3)
+}
+printf("%d",i); -> 11
+
+int i;
+for(i=1;i<=10;i++) printf("%d\t",i); -> 1 2 3 4 5 6 7 8 9 10
+
+(4)
+int i;
+for(i=1;i<=10;i++); //internally i will increment itself
+printf("%d\t",i); -> 11
+
+int i=1;
+for(;i<=5;i++)	printf("%d\t",i); -> 1 2 3 4 5
+
+for(int i=0,j=0;i<=5;i++) printf("%d %d\t",i,j); -> 00 10 20 30 40 50
+
+int i,j;
+for(i=1,j=0;i<5,j<3;i++) printf("%d %d\t",i,j); -> 10 20 30 40 50 ....infinity times
+//when in position of exp 2 there are more then 1 exp with comma separated the last exp will work just like (1,2,3) => 3
+
+i<5,j<3 -> when more than 1 condition is given last condition will run like x=(1,2) =>x =2
+
+int i,j;
+for(i=1,j=0;i<5,j<3;j++) printf("%d %d\t",i,j); -> 10 11 12
+
+to run both condition=> i<5 && j<3
+to run any condition=> i<5 || j<3
+
+int i,j;
+for(i=1,j=0;j<3 || i<5;j++) printf("%d %d\t",i,j); -> 10 11 12(logically)
+//[if exp2 is written oppostite (i<5 || j<3) then (logically) it will give 10 11 12 13 14 15... infinite times ]
+//but in both cases it runs for infinite times
+
+int i,j;
+for(i=1,j=0;i<5 || j<3;j++) printf("%d %d\t",i,j); -> 10 11 12.... infinite times
+
+int i,j;
+for(i=1,j=0;i<5 || j<3;i++) printf("%d %d\t",i,j); -> 10 20 30 40.... infinite times
+
+int i,j;
+for(i=1,j=0;j<3 || i<5;i++) printf("%d %d\t",i,j); -> 10 20 30 40.... infinite times
+
+int i,j;
+for(i=1,j=0;j<3 && i<5;j++) printf("%d %d\t",i,j); -> 10 11 12 [both condition checks]
+
+int i,j;
+for(i=1,j=0;j<3 && i<5;i++) printf("%d %d\t",i,j); -> 10 20 30 40 [both condition checks]
+
+//in exp 3 if i++,j++ is given, when there is more than 1 update value last j++ will work like (i++,j++) => j++
+
+int i,j;
+for(i=1,j=0;i<5 && j<3;i++,j++) printf("%d %d\t",i,j); -> 10 21 32 [both i++,j++ works together]
+
+int i,j;
+for(i=1,j=0;j<3 && i<5;i++,j++) printf("%d %d\t",i,j); -> 10 21 32 [irrespective of j<3 & i<5 positions]
+
+int i,j;
+for(i=1,j=0;j<3 || i<5;i++,j++) printf("%d %d\t",i,j); -> 10 21 32 43 [irrespective of j<3 & i<5 positions both i++,j++ works together]
+
+int i,j,k;
+for(i=1,j=0,k=0;i<5 && j<3 && k<4;i++,j++,k++) printf("%d %d %d\t",i,j,k); -> 100 211 322
+
+for(int i=1;i<=10;i++) printf("%d\t",i); -> 1 2 3 4 5 6 7 8 9 10
+
+for(int i=10;i>=1;i--) printf("%d\t",i); -> 10 9 8 7 6 5 4 3 2 1
+
+//multiplication table of any number
+int n;
+printf("Enter a Number: ");
+scanf("%d",&n);
+for(int i=1;i<=10;i++) printf("%d x %d = %d\n",n,i,n*i);
+
+//printing a to z alphabets
+char ch;
+for(ch='A';ch<='Z';ch++) printf("%c\t",ch);
+
+char ch;
+for(ch='a';ch<='z';ch++) printf("%c\t",ch);
+
+int ch;
+for(ch=65;ch<=90;ch++) printf("%c\t",ch);
+
+//printing even numbers from 1 to 20
+printf("Even Numbers are: ");
+for(int i=1;i<=20;i++){
+		if(i%2==0) printf("%d\t",i);
+}
+
+for(int i=2;i<=20;i=i+2) printf("%d\t",i);
+*/
