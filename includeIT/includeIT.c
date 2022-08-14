@@ -887,3 +887,72 @@ for(int i=1;i<=20;i++){
 
 for(int i=2;i<=20;i=i+2) printf("%d\t",i);
 */
+
+// 14/08/2022 SAU
+
+/*
+// Reverse a Number using a For Loop
+int n =12345;
+int reverse=0;
+for(int i=n;i!=0;i/=10){
+	int lastDigit = i%10;			//lastDigit stores remainder of n
+	reverse = reverse*10 + lastDigit;
+}
+printf("Reverse Number: %d",reverse);
+
+// Sum of Digits using a For Loop
+	int n = 12345;
+	int sum = 0;
+	for (int i = n; i != 0; i /= 10)
+	{
+		int lastDigit = i % 10;
+		sum += lastDigit;
+	}
+	printf("Sum of Digits: %d", sum);
+
+// Product of Digits using a For Loop
+	int n = 12345;
+	int pdt = 1;
+	for (int i = n; i != 0; i /= 10)
+	{
+		int lastDigit = i % 10;
+		pdt *= lastDigit;
+	}
+	printf("Product of Digits: %d", pdt);
+
+// Number of Digits using a For Loop
+	int n = 12345;
+	int count = 0;
+	for (int i = n; i != 0; i /= 10)
+		count++;
+	printf("Number of Digits: %d", count);
+
+// factor of a Number using a For Loop
+	int n = 100;
+	printf("Factors are: \n");
+	for (int i = 1; i <= n / 2; i++)
+		if (n % i == 0)
+			printf("%d\t", i);		//here the no. itself as a factor will not be printed since range is upto n/2
+
+// Prime or Not using a For Loop
+	int n = 19;
+	int i;
+	for (i = 2; i <= n / 2; i++)
+	{
+		if (n % i == 0)
+		{
+			printf("Non-prime");
+			break;
+		}
+	}
+	if (i > n / 2)				//when the for loop will work if any value of i cant divide n
+		printf("Prime Number");	//then i's value will become greater then n/2 [do dry run]
+
+// first & last digit of a number using a For Loop
+int n = 3445;
+int lastDigit = n % 10;
+while (n >= 10)			//for n>10 since any no. can belongs to 0 to 9 not more than that
+	n /= 10;			//n>=10 is given for no. like 103 when n=103/10 becomes 10 that time
+printf("First Digit: %d", n);		 //n>10 will not work hence we will need n>=10
+printf("\nLast Digit: %d", lastDigit);
+*/

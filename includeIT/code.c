@@ -471,5 +471,72 @@ int main()
 	// }
 	// for(int i=2;i<=20;i=i+2) printf("%d\t",i);
 
+	// 14/08/2022 SAU
+
+	// Reverse a Number using a For Loop
+	// int n =12345;
+	// int reverse=0;
+	// for(int i=n;i!=0;i/=10){
+	// 	int lastDigit = i%10;
+	// 	reverse = reverse*10 + lastDigit;
+	// }
+	// printf("Reverse Number: %d",reverse);
+
+	// Sum of Digits using a For Loop
+	// 	int n = 12345;
+	// 	int sum = 0;
+	// 	for (int i = n; i != 0; i /= 10)
+	// 	{
+	// 		int lastDigit = i % 10;
+	// 		sum += lastDigit;
+	// 	}
+	// 	printf("Sum of Digits: %d", sum);
+
+	// Product of Digits using a For Loop
+	// 	int n = 12345;
+	// 	int pdt = 1;
+	// 	for (int i = n; i != 0; i /= 10)
+	// 	{
+	// 		int lastDigit = i % 10;
+	// 		pdt *= lastDigit;
+	// 	}
+	// 	printf("Product of Digits: %d", pdt);
+
+	// Number of Digits using a For Loop
+	// 	int n = 12345;
+	// 	int count = 0;
+	// 	for (int i = n; i != 0; i /= 10)
+	// 		count++;
+	// 	printf("Number of Digits: %d", count);
+
+	// factor of a Number using a For Loop
+	// 	int n = 100;
+	// 	printf("Factors are: \n");
+	// 	for (int i = 1; i <= n / 2; i++)
+	// 		if (n % i == 0)
+	// 			printf("%d\t", i);
+
+	// Prime or Not using a For Loop
+	// 	int n = 19;
+	// 	int i;
+	// 	for (i = 2; i <= n / 2; i++)
+	// 	{
+	// 		if (n % i == 0)
+	// 		{
+	// 			printf("Non-prime");
+	// 			break;
+	// 		}
+	// 	}
+	// 	if (i > n / 2)
+	// 		printf("Prime Number");
+
+	// first & last digit of a number using a For Loop
+	// int n = 3445;
+	// int lastDigit = n % 10;
+	// while (n >= 10)
+	// 	n /= 10;
+	// printf("First Digit: %d", n);
+	// printf("\nLast Digit: %d", lastDigit);
+
 	return 0;
 }
