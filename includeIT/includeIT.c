@@ -473,12 +473,13 @@ printf("%d %d",num<<1,num>>1); -> 16 4 //1st 8 will be shifted to left side //2n
 
 int i =5;
 int a = ++i + ++i;
-printf("%d",a); ->14(6(+1)+7)
-//if the 2nd operator is pre-increment of pre-decrement then the 1st i will get a +1 or -1 respectively
+printf("%d",a); ->14=(6(+1)+7)
+//if the 2nd operator is pre-increment or pre-decrement then the 1st i will get a +1 or -1 respectively
+//incase of post-increment or post-decrement only update will happen +1 or -1 will not happen with 1st value of i
 
 int i =5;
 int a = ++i + ++i + ++i;
-printf("%d",a);-> 22(6(+1)+7+8)
+printf("%d",a);-> 22=(6(+1)+7+8)
 
 int i = 16;
 i = !i>15; //-> not i(=16)=> i=0>15 =0
@@ -487,11 +488,11 @@ printf("%d",i); -> 0
 
 int i =5;
 int a = --i + --i;
-printf("%d",a); -> 6(3(4-1)+3)
+printf("%d",a); -> 6=(3(4-1)+3)
 
 int i =5;
 int a = --i + --i + --i;
-printf("%d",a); -> 8(3(4-1)+3+2)
+printf("%d",a); -> 8=(3(4-1)+3+2)
 
 int a = 2, b=2, c=0,d=2,m;
 m = a++ && b++ && c++ || d++;
@@ -582,6 +583,21 @@ int b;
 b = ++i + ++i + ++i + ++i;
 printf("%d",b); ->31
 //b = 7(6+1) + 7 + 8 + 9 = 31
+
+int i =5;
+int b;
+b = ++i + i++;
+printf("%d",b); -> (6+1)+6 = 13
+
+int i =5;
+int b;
+b = ++i + ++i;
+printf("%d",b); -> (6+1)+7 = 14
+
+int i =5;
+int b;
+b = --i + --i;
+printf("%d",b); -> (4-1)+3 = 6
 
 int x = 0;
 if(x==x) printf("hi");
@@ -732,6 +748,8 @@ Rule:
 2) we can use int & char in switch(expression)
 3) we can write default in any position, compiler will ignore it until it checks all conditions (cases)
 4) nested switch is also possible
+5) we can't use ',' operator or || in case values but we can use expression in switch which will either give some int values
+
 eg:-
 switch(10){
 	case (10):
@@ -822,13 +840,20 @@ i<5,j<3 -> when more than 1 condition is given last condition will run like x=(1
 int i,j;
 for(i=1,j=0;i<5,j<3;j++) printf("%d %d\t",i,j); -> 10 11 12
 
-to run both condition=> i<5 && j<3
-to run any condition=> i<5 || j<3
+//to run both condition=> i<5 && j<3 .... in exp3 all update value is not necessary
+//to run any condition=> i<5 || j<3 .... in exp3 all update value should be used
+
+
+//if there is "or ||" condition in exp2 and if we upgrade value of only 1 variable
+in exp3 then the program will run for infinite times
+//if there is "and && " condition in exp2 and if we upgrade value of only 1 variable
+in exp3 then the program will run fine and it will still check all conditions
 
 int i,j;
 for(i=1,j=0;j<3 || i<5;j++) printf("%d %d\t",i,j); -> 10 11 12(logically)
 //[if exp2 is written oppostite (i<5 || j<3) then (logically) it will give 10 11 12 13 14 15... infinite times ]
-//but in both cases it runs for infinite times
+//but in both cases it runs for infinite times since we have updated only j's value
+//we must have update all variables during "or" case
 
 int i,j;
 for(i=1,j=0;i<5 || j<3;j++) printf("%d %d\t",i,j); -> 10 11 12.... infinite times
@@ -845,7 +870,17 @@ for(i=1,j=0;j<3 && i<5;j++) printf("%d %d\t",i,j); -> 10 11 12 [both condition c
 int i,j;
 for(i=1,j=0;j<3 && i<5;i++) printf("%d %d\t",i,j); -> 10 20 30 40 [both condition checks]
 
+int i,j;
+for(i=1,j=0;j<3 && i<5;j++) printf("%d %d\t",i,j); -> 10 11 12 //"&&" checks both conditions
+printf("\n");
+for(i=1,j=0;i<5 && j<3;j++) printf("%d %d\t",i,j); -> 10 11 12
+printf("\n");
+for(i=1,j=0;i<5 && j<3;i++,j++) printf("%d %d\t",i,j); -> 10 21 32
+printf("\n");
+for(i=1,j=0;i<5 && j<3;j++,i++) printf("%d %d\t",i,j); -> 10 21 32
+
 //in exp 3 if i++,j++ is given, when there is more than 1 update value last j++ will work like (i++,j++) => j++
+but in reality all update variable works
 
 int i,j;
 for(i=1,j=0;i<5 && j<3;i++,j++) printf("%d %d\t",i,j); -> 10 21 32 [both i++,j++ works together]
@@ -955,4 +990,152 @@ while (n >= 10)			//for n>10 since any no. can belongs to 0 to 9 not more than t
 	n /= 10;			//n>=10 is given for no. like 103 when n=103/10 becomes 10 that time
 printf("First Digit: %d", n);		 //n>10 will not work hence we will need n>=10
 printf("\nLast Digit: %d", lastDigit);
+*/
+
+// 19/08/2022 SAU (ONLINE)
+/*
+for(int i=1,j=1;i<=3,j<=3;i++,j++) printf("%d %d ",i,j); -> 1 1 2 2 3 3
+
+int i=1,j=1;
+for(;j;printf("%d%d",i,j)) j=i++<=1; -> 2130
+//for(;1;printf(2,1)) since j =1
+//j = 1<=1 => j =1 since 1 is equals to 1 and i++ maked i =2 hence printf(2,1)
+//loop moves from 4 to 2 again for(;1;printf(3,0)) since j = 1 (again)
+//j = 2<=1 => j = 0 and i++ makes i =3 hence printf(3,0)
+
+int i; //(globally)
+int t;
+for(t=4;scanf("%d",&i);printf("%d\n",i)){
+	printf("%d  ",t--); -> (a) 4  6
+} //user input is 6 for i from options
+options:
+(a) 4  6 (b) 6  (c) 4  (d) NOTA
+//here the loop will work for infinite times but according the options answer will be (a)
+//since here expression 2 is considered as a condition hence it will return 1 after taking user input and
+//it will terminate after this (but in reality in doesn't terminate)
+
+int i;
+for(i=0;i>9;i++) printf("FOR"); -> nothing
+//since i=0>9 hence condition false hence doesn't print anything
+
+char i=0; //takes 0 as int not as a char since we doesn't use '0' quotation
+for(;i>=0;i++); //0>=0 hence true
+printf("%d\n",i); -> -128
+//since the loop will run for i =127 then the loop will work again and the circle of signed char
+//will complete and it will move to the negative part of the circle hence i =-128>=0 hence false
+//condition hence i will print -128
+
+int i=1,j=1;
+for(--i && j++;i<10;i+=2) printf("Loop"); -> LoopLoopLoopLoopLoop
+//expression 1 gives = 0 but compiler doesn't depend on initialisation part of for loop
+//compiler is depend on condition part (expression 2)
+//hence loop will still work and it will print loop for 5 times
+
+int i=1,j=1;
+for(0;i<10;i+=2) printf("Loop"); -> LoopLoopLoopLoopLoop
+
+for(5;2;2) printf("hello"); ->hello.... infinite times
+//expression 1,2,4 is non zero hence loop will move around expression 2 to 4 hence loop will
+//run for infinite times
+
+//printf prints the character inside it and it also returns the number of characters inside it
+//scanf takes input from the user and it also returns 1 if it successfully executes the program
+//and returns 0 if itsn't able to execute the program
+
+int fun = {printf("C for loop")}; //prints C for loop and stores 10 in var fun
+int x =5;
+for(x=0;x<=fun;x++) printf("%x",x); -> C for loop0123456789a
+//the loop transforms into for(x=0;x<=10;x++) and prints x in hexadecimal form
+//hexadecimal form of 10 is a
+
+int fun = {printf("%d ",3)}; //prints 3 and stores 3(count of %d and 1 space is 3) in var fun
+int x =5;
+for(x=0;x<=fun;x++) printf("%x",x); -> 30123
+*/
+
+// 21/08/2022 SAI
+
+/*
+int i;
+for (; 1;)
+	scanf("%d", &i);  -> takes user input infinite times
+// since expression 2 is 1 hence always true
+
+// optimised way of showing number of days in a month
+#include <stdlib.h> // for abs
+int m;
+scanf("%d", &m);
+m = abs(m); //it will convert user negative values
+switch ((m <= 7 && m % 2 != 0) || (m >= 8 && m <= 12 && m % 2 == 0))
+{ //m greater then and equals to 1 and smaller than equals to 7 whose modulo gives 1 (hence odd) have 31 days
+//or conditon between them
+ //m greater then and equals to 8 and smaller than equals to 12 whose modulo gives 0 (hence even) have 30 days
+//  not able to tell about february month
+case 1:
+	printf("31");
+	break;
+case 0:
+	printf("30");
+	break;
+default:
+	printf("Invalid");
+	break;
+}
+
+// WAP  to create a basic calculator
+float a, b;
+char operator;
+printf("Enter the expression to calculate: ");
+scanf("%f%c%f", &a, &operator, & b);
+switch (operator)
+{
+case '+':
+	printf("%.f%c%.f = %.f", a, operator, b, a + b);
+	break;
+case '-':
+	printf("%.f%c%.f = %.f", a, operator, b, a - b);
+	break;
+case '*':
+	printf("%.f%c%.f = %.f", a, operator, b, a * b);
+	break;
+case '/':
+	printf("%.f%c%.f = %.f", a, operator, b, a / b);
+	break;
+default:
+	printf("Invalid Input");
+	break;
+}
+
+// WAP to check user authentication
+#include <string.h> //for using strcmp
+char userInput[50], password[50], userInputAgain[50], passwordAgain[50];
+printf("Enter Username: ");
+gets(userInput);
+printf("Enter Password: ");
+gets(password);
+printf("Again Enter Username: ");
+gets(userInputAgain);
+int value_user = strcmp(userInput, userInputAgain);
+// strcmp compares two strings and it returns 0 if both strings are equal
+int value_password;
+switch (value_user)
+{
+case 0:
+	printf("Again Enter Password: ");
+	gets(passwordAgain);
+	value_password = strcmp(password, passwordAgain);
+	switch (value_password)
+	{
+	case 0:
+		printf("Authenticated");
+		break;
+	default:
+		printf("Wrong User");
+		break;
+	}
+	break;
+default:
+	printf("Wrong User");
+	break;
+}
 */

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
 
 int main()
@@ -33,6 +34,26 @@ int main()
 		break;
 	default:
 		cout << "Invalid Input";
+		break;
+	}
+
+
+	// more optimised
+
+	int m;
+	scanf("%d", &m);
+	m = abs(m);
+	// feb month can't be printed
+	switch ((m <= 7 && m % 2 != 0) || (m >= 8 && m <= 12 && m % 2 == 0))
+	{
+	case 1:
+		printf("31");
+		break;
+	case 0:
+		printf("30");
+		break;
+	default:
+		printf("Invalid");
 		break;
 	}
 	return 0;

@@ -300,6 +300,21 @@ int main()
 	// b = ++i + ++i + ++i + ++i;
 	// printf("%d",b);
 
+	// int i =5;
+	// int b;
+	// b = ++i + i++;
+	// printf("%d",b);
+
+	// int i =5;
+	// int b;
+	// b = ++i + ++i;
+	// printf("%d",b);
+
+	// int i =5;
+	// int b;
+	// b = --i + --i;
+	// printf("%d",b);
+
 	// int x = 0;
 	// if(x==x) printf("hi");
 	// else printf("hello");
@@ -437,6 +452,15 @@ int main()
 	// for(i=1,j=0;j<3 || i<5;i++) printf("%d %d\t",i,j);
 
 	// int i,j;
+	// for(i=1,j=0;j<3 && i<5;j++) printf("%d %d\t",i,j);
+	// printf("\n");
+	// for(i=1,j=0;i<5 && j<3;j++) printf("%d %d\t",i,j);
+	// printf("\n");
+	// for(i=1,j=0;i<5 && j<3;i++,j++) printf("%d %d\t",i,j);
+	// printf("\n");
+	// for(i=1,j=0;i<5 && j<3;j++,i++) printf("%d %d\t",i,j);
+
+	// int i,j;
 	// for(i=1,j=0;i<5 && j<3;i++,j++) printf("%d %d\t",i,j);
 
 	// int i,j;
@@ -537,6 +561,114 @@ int main()
 	// 	n /= 10;
 	// printf("First Digit: %d", n);
 	// printf("\nLast Digit: %d", lastDigit);
+
+	// 19/08/2022 SAU (ONLINE)
+
+	//for(int i=1,j=1;i<=3,j<=3;i++,j++) printf("%d %d ",i,j);
+
+	// int i=1,j=1;
+	// for(;j;printf("%d%d",i,j)) j=i++<=1;
+
+	// int i; //(globally)
+	// int t;
+	// for(t=4;scanf("%d",&i);printf("%d\n",i)){
+	// 	printf("%d  ",t--);
+	// }
+
+	// int i;
+	// for(i=0;i>9;i++) printf("FOR");
+
+	// char i=0;
+	// for(;i>=0;i++);
+	// printf("%d\n",i);
+
+	// int i=1,j=1;
+	// for(--i && j++;i<10;i+=2) printf("Loop");
+
+	// int i=1,j=1;
+	// for(0;i<10;i+=2) printf("Loop");
+
+	// for(5;2;2) printf("hello");
+
+	// int fun = {printf("C for loop")};
+	// int fun = {printf("%d ",3)};
+	// int x =5;
+	// for(x=0;x<=fun;x++) printf("%x",x);
+
+	// 21/08/2022 SAI
+
+	// int i;
+	// for (; 1;)
+	// 	scanf("%d", &i);
+
+	// int m;
+	// scanf("%d", &m);
+	// m = abs(m);
+	// switch ((m <= 7 && m % 2 != 0) || (m >= 8 && m <= 12 && m % 2 == 0))
+	// {
+	// case 1:
+	// 	printf("31");
+	// 	break;
+	// case 0:
+	// 	printf("30");
+	// 	break;
+	// default:
+	// 	printf("Invalid");
+	// 	break;
+	// }
+
+	// float a, b;
+	// char operator;
+	// printf("Enter the expression to calculate: ");
+	// scanf("%f%c%f", &a, &operator, & b);
+	// switch (operator)
+	// {
+	// case '+':
+	// 	printf("%.f%c%.f = %.f", a, operator, b, a + b);
+	// 	break;
+	// case '-':
+	// 	printf("%.f%c%.f = %.f", a, operator, b, a - b);
+	// 	break;
+	// case '*':
+	// 	printf("%.f%c%.f = %.f", a, operator, b, a * b);
+	// 	break;
+	// case '/':
+	// 	printf("%.f%c%.f = %.f", a, operator, b, a / b);
+	// 	break;
+	// default:
+	// 	printf("Invalid Input");
+	// 	break;
+	// }
+
+	// char userInput[50], password[50], userInputAgain[50], passwordAgain[50];
+	// printf("Enter Username: ");
+	// gets(userInput);
+	// printf("Enter Password: ");
+	// gets(password);
+	// printf("Again Enter Username: ");
+	// gets(userInputAgain);
+	// int value_user = strcmp(userInput, userInputAgain);
+	// int value_password;
+	// switch (value_user)
+	// {
+	// case 0:
+	// 	printf("Again Enter Password: ");
+	// 	gets(passwordAgain);
+	// 	value_password = strcmp(password, passwordAgain);
+	// 	switch (value_password)
+	// 	{
+	// 	case 0:
+	// 		printf("Authenticated");
+	// 		break;
+	// 	default:
+	// 		printf("Wrong User");
+	// 		break;
+	// 	}
+	// 	break;
+	// default:
+	// 	printf("Wrong User");
+	// 	break;
+	// }
 
 	return 0;
 }
