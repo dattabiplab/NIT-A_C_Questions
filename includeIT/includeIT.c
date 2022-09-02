@@ -1139,3 +1139,81 @@ default:
 	break;
 }
 */
+
+// 27/08/2022 SAU
+
+/*
+// Armstrong Numbers for Any number of Digits
+#include <math.h>
+int dig, num, count = 0;
+printf("Enter a Number: ");
+scanf("%d", &dig);
+num = dig;
+while (num != 0)
+{
+	count++;
+	num /= 10;
+}
+int sum = 0;
+num = dig;
+while (dig != 0)
+{
+	sum += floor(pow((dig % 10), count));
+	dig /= 10;
+}
+if (num == sum)
+	printf("It's an Armstrong Number");
+else
+	printf("Not an Armstrong Number");
+
+// Fibonacci Series
+int n, n1, n2, n3;
+printf("Enter a Number: ");
+scanf("%d", &n);
+n1 = 0;
+n2 = 1;
+printf("%d\t%d\t", n1, n2);
+for (int i = 2; i < n; ++i)
+{
+	n3 = n1 + n2;
+	n1 = n2;
+	n2 = n3;
+	printf("%d\t", n3);
+}
+
+// Palindrome Digit or Not
+int dig;
+printf("Enter a Number: ");
+scanf("%d", &dig);
+int rev = 0;
+for (int i = dig; i != 0; i /= 10)
+{
+	rev = (rev * 10) + (i % 10);
+}
+if (rev == dig)
+	printf("Its Palindrome");
+else
+	printf("Not Palindrome");
+
+// Factorial of Number
+int n, pdt = 1;
+printf("Enter a Number: ");
+scanf("%d", &n);
+if (n == 0)
+	printf("%d", n + 1);
+else
+{
+	for (int i = 1; i <= n; ++i)
+		pdt *= i;
+	printf("%d", pdt);
+}
+
+// power of a Number
+int exp, base;
+printf("Enter the Base & its Exponentiation: ");
+scanf("%d %d", &base, &exp);
+int ans = 1;
+for (int i = 1; i <= exp; ++i)
+	ans *= base;
+printf("%d ^ %d = %d", base, exp, ans);
+*/
