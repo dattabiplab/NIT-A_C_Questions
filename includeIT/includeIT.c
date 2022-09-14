@@ -1217,3 +1217,40 @@ for (int i = 1; i <= exp; ++i)
 	ans *= base;
 printf("%d ^ %d = %d", base, exp, ans);
 */
+
+// 10/09/2022 SAU
+
+/*
+int x = -1;
+while(x++ == 1) printf("loop"); => nothing (since false condition)
+
+// In while loop if there are multiple conditions consider last condition
+// If they are comma seperated then consider last condition after last comma(,)
+
+int i=0;
+while(i<4,5){ 		//i<4 = 1 (true condition) =>while(1,5) => while(5){always true} [last condition]
+	printf("loop");
+	i++;
+} => loop....infinite times
+
+int i=0;
+while(0,i<4){ //i<4 =1 while(0,1) =>while(1) i++ i++ i++ i++ =>i=4
+	printf("loop"); //i<4 = 0 while(0,0) => while(0) while loop terminated
+	i++;
+} => looplooplooploop
+
+// sizeof(NULL) =4
+
+while(sizeof(NULL)) printf("loop");=>loop....infinite times //[while(4)]
+
+while(!!7) printf("loop");=>loop....infinite times //!(!7) =!0 = 1 while(1)
+
+// Ternary Operator
+
+// exp 1? exp 2: exp 3;
+// if exp 1 is true then exp 2 will execute
+// else if exp 1 is false then exp 3 will execute
+
+int i=0;
+(i>5)?printf("+ve"):printf("-ve");
+*/

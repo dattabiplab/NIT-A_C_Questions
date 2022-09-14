@@ -745,5 +745,29 @@ int main()
 	// 	ans *= base;
 	// printf("%d ^ %d = %d", base, exp, ans);
 
+	// 10/09/2022 SAU
+
+	// int x = -1;
+	// while(x++ == 1) printf("loop");
+
+	// int i=0;
+	// while(i<4,5){
+	// 	printf("loop");
+	// 	i++;
+	// }
+
+	// int i=0;
+	// while(0,i<4){
+	// 	printf("loop");
+	// 	i++;
+	// }
+
+	// while(sizeof(NULL)) printf("loop");
+
+	// while(!!7) printf("loop");
+
+	// int i=0;
+	// (i>5)?printf("+ve"):printf("-ve");
+
 	return 0;
 }
