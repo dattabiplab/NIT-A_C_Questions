@@ -1,5 +1,23 @@
 #include <stdio.h>
 
+// 2nd method using function
+
+// void power(int num,int index){
+// 	int indice = index,ans =1;
+// 	while(index!=0){
+// 		ans*=num;
+// 		index--;
+// 	}
+// 	printf("%d to the power %d is %d",num,indice,ans);
+// }
+// int main(){
+// 	printf("Enter Number & its Index: \n");
+// 	int num,index;
+// 	scanf("%d %d",&num,&index);
+// 	power(num,index);
+// }
+
+// 1st method normally
 int main()
 {
 	int exp, base;

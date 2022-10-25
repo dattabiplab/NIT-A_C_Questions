@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include <math.h>
 
+// void set(int a){
+// 	a =0;
+// 	printf("set %d\n",a);		//24/09/2022
+// }
+
+// void set(int *a){
+// 	*a=0;
+// 	printf("set %d\n",*a);
+// }
+
+// void f1(int a,int b){
+// 	int c;
+// 	c=a;
+// 	a=b;
+// 	b=c;
+// }
+// void f2(int *a,int *b){
+// 	int c;
+// 	c = *a;
+// 	*a = *b;
+// 	*b = c;
+// }
+
 int main()
 {
 	// 11/06/2022
@@ -768,6 +791,307 @@ int main()
 
 	// int i=0;
 	// (i>5)?printf("+ve"):printf("-ve");
+
+	// 24/09/2022
+
+	// int a =10;
+	// printf("before %d\n",a);
+	// set(a);
+	// printf("after %d\n",a);
+
+	// int a =10;
+	// printf("before %d\n",a);
+	// set(&a);
+	// printf("after %d\n",a);
+
+	// int a=4,b=5,c=6;
+	// f1(a,b);
+	// f2(&a,&b);
+	// printf("%d",c-a-b);
+
+	// 30/09/2022 SAU
+
+	// void circlearea(float r)
+	// {
+	// 	float pie = 3.14;
+	// 	float ans = pie * r * r;
+	// 	printf("%f", ans);
+	// }
+	// int main()
+	// {
+	// 	printf("Enter Radius: ");
+	// 	float r;
+	// 	scanf("%f", &r);
+	// 	circlearea(r);
+	// }
+
+	// float circlearea(float r)
+	// {
+	// 	float pie = 3.14;
+	// 	float ans = pie * r * r;
+	// 	return ans;
+	// }
+	// int main()
+	// {
+	// 	printf("Enter Radius: ");
+	// 	float r, x;
+	// 	scanf("%f", &r);
+	// 	x = circlearea(r);
+	// 	printf("%f", x);
+	// }
+
+	// 08/10/2022
+
+	// int a = 10, b = 20;
+	// int fun()
+	// {
+	// 	int a = 5;
+	// 	int c = b / a;
+	// 	printf("%d", c);
+	// }
+	// int main()
+	// {
+	// 	fun();
+	// }
+
+	// def fun1(b):
+	// b = b+10
+	// b = fun2(b)
+	// return b
+
+	// def fun2(b):
+	// c = a+b
+	// return c
+
+	// a =10
+	// a = fun1(a)
+	// print(a)
+
+	// 15/10/2022
+
+	// struct name
+	// {
+	// 	int x, y, z;
+	// };
+	// int main()
+	// {
+	// 	struct name p1 = {.y = 0, .z = 1, .x = 2};
+	// 	printf("%d %d %d", p1.x, p1.y, p1.z);
+	// }
+
+	// struct rectangle
+	// {
+	// 	int length;
+	// 	int breadth;
+	// };
+	// int areaOfRect(struct rectangle r)
+	// {
+	// 	return r.length * r.breadth;
+	// }
+
+	// int main()
+	// {
+	// 	struct rectangle r;
+	// 	r.length = 20;
+	// 	r.breadth = 10;
+	// 	int ans = areaOfRect(r);
+	// 	printf("%d", ans);
+	// }
+
+	// struct complex
+	// {
+	// 	float real;
+	// 	float img;
+	// };
+
+	// struct complex add(struct complex n1, struct complex n2)
+	// {
+	// 	struct complex temp;
+	// 	temp.real = n1.real + n2.real;
+	// 	temp.img = n1.img + n2.img;
+	// 	return temp;
+	// }
+	// int main()
+	// {
+	// 	struct complex c1;
+	// 	struct complex c2;
+	// 	struct complex ans;
+
+	// 	c1.real = 3;
+	// 	c1.img = 7;
+	// 	c2.real = 7;
+	// 	c2.img = 3;
+
+	// 	ans = add(c1, c2);
+	// 	printf("%.1f + %.1fi", ans.real, ans.img);
+	// }
+
+	// struct conversion
+	// {
+	// 	int foot;
+	// 	int inch;
+	// };
+	// struct conversion add(struct conversion n1, struct conversion n2)
+	// {
+	// 	struct conversion temp;
+	// 	temp.foot = n1.foot + n2.foot;
+	// 	temp.inch = n1.inch + n2.inch;
+
+	// 	// more than or equals to 12 inches
+
+	// 	if (temp.inch >= 12)
+	// 	{
+	// 		temp.foot += (temp.inch / 12);
+	// 		// temp.inch %= (float)12;		-> not able to operate through floats
+	// 		temp.inch %= 12;
+	// 	}
+
+	// 	// or
+
+	// 	while (temp.inch >= 12)
+	// 	{
+	// 		temp.inch -= 12;
+	// 		temp.foot++;
+	// 	}
+	// 	return temp;
+	// }
+	// int main()
+	// {
+	// 	struct conversion c1;
+	// 	struct conversion c2;
+	// 	struct conversion ans;
+
+	// 	c1.foot = 3;
+	// 	c1.inch = 7;
+	// 	c2.foot = 7;
+	// 	c2.inch = 6;
+
+	// 	ans = add(c1, c2);
+	// 	// printf("%.2f foot & %.2f inches",ans.foot,ans.inch);
+	// 	printf("%d foot & %d inches", ans.foot, ans.inch);
+
+	// 22/10/2022
+
+	// int fun()
+	// {
+	// 	int a;
+	// 	a = 250;
+	// 	return 0;
+	// }
+	// int main()
+	// {
+	// 	int i;
+	// 	i = fun();
+	// 	printf("%d", i);
+	// 	return 0;
+	// }
+
+	// int fun()
+	// {
+	// 	int a;
+	// 	a = 250;
+	// }
+	// int main()
+	// {
+	// 	int i;
+	// 	i = fun();
+	// 	printf("%d", i);
+	// 	return 0;
+	// }
+
+	// int main()
+	// {
+	// 	main();
+	// 	return 0;
+	// }
+
+	// int _a_123(int num)
+	// {
+	// 	return (num++);
+	// }
+	// int main()
+	// {
+	// 	int num = _a_123(4);
+	// 	printf("%d", --num);
+	// 	return 0;
+	// }
+
+	// int fun(int x, int y)
+	// {
+	// 	return (x - (x == y));
+	// }
+	// int main()
+	// {
+	// 	int a = 25;
+	// 	int b = 24 + 1;
+	// 	int c;
+	// 	printf("%d", fun(a, b));
+	// 	return 0;
+	// }
+
+	// int returns(int ret)
+	// {
+	// 	ret += 5.01;
+	// 	return ret;
+	// }
+	// int main()
+	// {
+	// 	int num = returns(sizeof(float));
+	// 	printf("%d", ++num);
+	// 	return 0;
+	// }
+
+	// int main()
+	// {
+	// 	int i = 5;
+	// 	printf("%d", ++i + ++i);
+	// }
+
+	// int main()
+	// {
+	// 	int i = 5;
+	// 	printf("%d", ++i + i++);
+	// 	printf("%d", i);
+	// }
+
+	// int main()
+	// {
+	// 	int i = 5;
+	// 	i = ++i + i++;
+	// 	printf("%d", i);
+	// }
+
+	// int main()
+	// {
+	// 	printf("%p", main());
+	// }
+
+	// int main()
+	// {
+	// 	int i = 5;
+	// 	printf("%d %d %d %d %d", i++, i--, ++i, --i, i);
+	// 	return 0;
+	// }
+
+	// correct syntax : -(a) int func();
+	// (b) int func(int x) { return; }
+	// (c) void func(int) { printf("hello"); }
+	// (d) void func(x) { printf("hello"); }
+
+	// int num = 5;
+	// int fun()
+	// {
+	// 	static int num = 2;
+	// 	printf("%d", num);
+	// 	num++;
+	// 	return 0;
+	// }
+	// int main()
+	// {
+	// 	fun();
+	// 	fun();
+	// 	return 0;
+	// }
 
 	return 0;
 }
