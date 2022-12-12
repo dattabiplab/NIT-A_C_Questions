@@ -1806,6 +1806,9 @@ int main(){
 	printf("%d %d %d %d %d",i++,i--,++i,--i,i);
 	return 0;
 }		-> 4 5 5 5 5
+// i	--i		++i		i--		i++
+//	5	(pre)	(pre)	(post)	(post)
+//	(pre) value of --i is overwrited by (pre) ++i
 
 correct syntax:-	-> option b
 (a)	int func();
@@ -1839,4 +1842,142 @@ int main(){
 }		-> 23
 
 // # lifespan of a static variable is throughout the full program
+*/
+
+// 30/10/2022
+/*
+GESTIMATES
+
+	product sale estimation
+all points to remember/consider
+(1)	age
+(2)	income
+(3)	calculation
+(4)	life span
+(5)	market share
+
+int i = 5;
+i = ++i + ++i + ++i;
+printf("%d",i);		-> 22 (7+7+8)
+
+int i = 12;
+printf("%d",i != 12);	// 12 != 12	=> false = 0
+int a = !i;
+if (a==12) printf("Yes");
+else printf("No");		-> 0No
+*/
+
+// 05/11/2022
+/*
+POINTER = its a variable which stores address of a variable
+
+int main(){
+	int a = 5;
+	int *ptr = &a;	// & = referencing
+	*ptr = 10;		// * = deferencing
+}
+
+int a = 10;
+printf("%d\n",&a);		// -> 1024
+printf("%d",&a+1);		// -> 1028
+		//	addrass + (no. * size of int/char)
+
+int a = 10;
+int *ptr = &a;
+printf("%d\n",a);		// -> 10
+printf("%d\n",*ptr);	// -> 10
+printf("%d\n",&a);		// -> 1024
+printf("%d\n",ptr);		// -> 1024
+printf("%d\n",&ptr);	// -> 2024
+
+POINTER TO POINTER (DOUBLE POINTER)
+= It is a pointer which stores address of another pointer
+
+			dptr		ptr			a
+values->	2024		1024		10
+address->	3024	<-	2024	<-	1024
+
+int a = 10;
+int *ptr = &a;
+int **dptr = &ptr;
+printf("%p\n",&a);		// -> 0061ff18
+printf("%p\n",ptr);		// -> 0061ff18
+printf("%p\n",dptr);	// -> 0061ff14
+printf("%p\n",a);		// -> 0000000a
+printf("%p\n",*ptr);	// -> 0000000a
+printf("%p\n",**dptr);	// -> 0000000a
+*/
+
+// 06/11/2022
+/*
+locally array size = 10^7
+globally array size = 10^8
+
+int a = 5;
+int *p = a;
+
+p++ =>
+p = p + (1*size of p) = 100 + 1*4 = 104
+
+p+=2 =>
+p = p + (2*size of p) = 100 + 2*4 = 108
+
+int a = 	[1,2,3,4,5,6,7]
+	index =  0 1 2 3 4 5 6
+
+// pointer(pointer location) is present at 1st bit of 1st byte of 4 bytes of 0th index of array
+
+int a = 5;
+int *p = &a;
+int **q = &p;
+q++;
+p++;		// -> working properly
+	// but theoretically error since dptr pointing a ptr which is pointing
+	// to a random location not an integer location
+
+// if 'q' is not pointing to 'p' & directly pointing to a which means
+// 'p' is no more pointing to 'a' then 'p' is called "Dangling Pointer"
+// [But 'q' cant point 'a' because 'q' is a 'double pointer' & cant point at a variable]
+
+int i = 3;
+int *j;
+int **k;
+j = &i;
+k = &j;
+k++;		// due to link break in k++
+printf(**k);		-> error
+
+int i = 3;
+int *j;
+j = &i;
+j++;
+printf("%d",*j);		-> garbage value
+(a) linker area
+(b) runtime error
+(c) compiler error
+(d) garbage value
+// when its a single pointer it can point to a random address but double
+// pointer pointing a random address is illogical
+
+#include <string.h>
+char *ptr = "hello";
+char a[22];
+strcpy(a,"world");
+printf("%s %s",ptr,a);
+
+char *ptr = "helloworld";
+printf(ptr+4);
+
+char *ptr = "biplab";
+printf("%c",*&*ptr);		-> b
+// * & cancel out and due to %c only char get print out
+
+char a = 30, b = 5 ;
+char *p = &a, *q = &b;
+printf("%d", p-q);		-> 1
+// p-q = difference between location(address) of a & b
+
+int a = 30, b = 5 ;
+int *p = &a, *q = &b;
+printf("%d", p-q);		-> 1
 */

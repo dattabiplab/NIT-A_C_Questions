@@ -1,4 +1,7 @@
 #include <stdio.h>
+
+// ____________________MID TERM____________________
+
 // void main(){
 // 	int x = 10,y=20,z;
 // 	if(y>0) if(y<0) x=30;
@@ -78,4 +81,40 @@
 // 		default:
 // 		printf("\n Output1=%d",(k+++1)*2);
 // 	}
+// }
+
+
+// ____________________END TERM____________________
+
+// void f(int n){
+// 	if(n<=1) printf("%d",n);
+// 	else{
+// 		f(n/2);
+// 		printf("%d",n%2);
+// 	}
+// }
+// int main(){
+// 	f(173);
+// }
+
+// int f1(void);
+// int f2(void);
+// int f3(void);
+// int x = 10;
+// int main(){
+// 	int x = 1;
+// 	x+= f1() + f2() + f3() + f2();
+// 	printf("%d",x);
+// 	return 0;
+// }
+// int f1() {int x = 25; x++;return x;}
+// int f2() {static int x = 50; x++; return x;}
+// int f3() {x*=10; return x;}
+
+// int abc(int a){
+// 	return (++a,a++);
+// }
+// int main(){
+// 	printf(" Hello World"+abc(3.5));
+// 	return 0;
 // }
