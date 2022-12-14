@@ -1,6 +1,25 @@
 // factor of a Number using a For Loop
 #include <stdio.h>
 
+<<<<<<< HEAD
+=======
+// 2nd method
+// void factor(int num){
+// 	printf("Factor of %d are: \n",num);
+// 	for(int i=1;i<=num;i++){
+// 		if(num%i==0) printf("%d\t",i);
+// 	}
+// 	printf("\n");
+// }
+// int main(){
+// 	printf("Enter a Number: \n");
+// 	int num;
+// 	scanf("%d",&num);
+// 	factor(num);
+// }
+
+// 1st method
+>>>>>>> 175c2f8a395c06216fca78efe742a24724ac6be3
 int main()
 {
 	int n = 100;

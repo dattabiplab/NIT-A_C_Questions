@@ -1254,3 +1254,730 @@ while(!!7) printf("loop");=>loop....infinite times //!(!7) =!0 = 1 while(1)
 int i=0;
 (i>5)?printf("+ve"):printf("-ve");
 */
+
+//24/09/2022
+/*
+Call by Value
+void set(int a){
+	a =0;
+	printf("set %d\n",a);		//24/09/2022
+}
+int a =10;
+printf("before %d\n",a);
+set(a);	-> a's value didn't changed due to copy of value of a
+printf("after %d\n",a);
+
+Call by Reference
+void set(int *a){
+	*a=0;
+	printf("set %d\n",*a);
+}
+int a =10;
+printf("before %d\n",a);
+set(&a); -> a's value get changed due to passing of address of a
+printf("after %d\n",a);
+
+void f1(int a,int b){
+	int c;
+	c=a;
+	a=b;
+	b=c;
+}
+void f2(int *a,int *b){
+	int c;	-> it's another c not related with c of main function
+	c = *a;
+	*a = *b;
+	*b = c;
+}
+int a=4,b=5,c=6;
+f1(a,b);	->it's useless
+f2(&a,&b);	-> value of a & b get swapped
+printf("%d",c-a-b);	-> -3		->here c is local c hence 6-5-4 = -3
+*/
+
+//25/09/2022 SAI
+
+/*
+int a =10;
+//pointer type int variable
+int *b;	=> declaration
+int c;
+b = &a;	=> inittialisation
+//b it stores hexadecimal (value) address of a
+c=a;
+
+int *c;
+// int❌ => same datatype is required (char)
+char p = 'P';
+c = &p;		=> hence compilation error
+
+int *b = &a;	//initialisation & declaration
+b = *(&a)	= a //[seems like both * and & gets cancel each other ]
+
+// In reality msb address is stored in a pointer
+
+DOUBLE POINTER
+int a =10;
+int *b;
+b = &a;
+int **c;
+c = &b;
+
+// double pointer 👉 single pointer 👉 normal variable
+// double pointer will always store single pointer never a normal variable
+
+b = &a;
+c = &b;
+c = &(&a);
+*c = *(&(&b)); 	//[* and & cancels each other]
+*c = &a = b =2024;
+**c = *(&a) = a = 10
+
+c = 1024
+*c = *(2024) = 1024
+**c = *(1024) = 10
+
+POINTER ARITHMETIC
+
+a=10;
+a++ =11
+b++ = 1024(add of a) +1 = 1025 or doesnot exist
+	hence *b  = nothing
+c++ doesnot exist (since b doesnot exist) 	//compilation error
+
+//c will first check that b which it is pointing will it (b) is pointing a variable or not.
+//Then if c sees b is pointing to variable then c++ will work.
+
+// If c sees there is b not pointing to anything then there will be compiler error
+
+b++ =>
+		b= b+1❌
+		b = b+(1 * sizeof variable)
+	    b = 1024 + (1*4) = 1028
+	    b = &a = 1024
+*/
+
+// 30/09/2022 SAU
+/*
+VOID
+void circlearea(float r){
+	float pie = 3.14;
+	float ans = pie*r*r;
+	printf("%f",ans);
+}
+int main(){
+	printf("Enter Radius: ");
+	float r;
+	scanf("%f", &r);
+	circlearea(r);
+}
+
+INT/FLOAT
+float circlearea(float r){
+	float pie = 3.14;
+	float ans = pie*r*r;
+	return ans;
+}
+int main(){
+	printf("Enter Radius: ");
+	float r,x;
+	scanf("%f", &r);
+	x = circlearea(r);
+	printf("%f",x);
+}
+*/
+
+// 08/10/2022
+/*
+// STATIC SCOPING
+int a =10,b=20;
+int fun(){
+	int a =5;
+	int c = b/a;
+	printf("%d",c);
+}
+int main(){
+	fun();
+}
+
+// DYNAMIC SCOPING
+// ->dynamic scoping is not present in "C or C++" it works in Python
+
+int fun1(int b){
+	b = b+10;
+	b = fun2(b);
+	return b;
+}
+int fun2(int b){
+	int c;
+	c = a+b;
+	return c;
+}
+int main(){
+	int a =10;
+	a = fun1(a);
+	printf("%d",a);
+} //-> {gives error in c/c++}
+
+// 1st fun2() will check in itself is 'a' present in fun2() then it will
+// do backtreck from where its called (i.e. fun1()) if its not present in fun1()
+// it will come to main() then if still 'a' is not found then error
+
+// python code
+def fun1(b):
+	b = b+10
+	b = fun2(b)
+	return b
+
+def fun2(b):
+	c = a+b
+	return c
+
+a =10
+a = fun1(a)
+print(a) //-> 30
+
+// TYPES OF ERROR
+(1) compiler
+	(a) syntax		-> ; not giving semicolons
+	(b) semantic	-> c = a+b ✔	 a+b = c ❌ {operators related}
+(2) runtime 	-> during compilation everything perfect during running error
+(3) logical 	-> not getting expected output
+(4) linker error	-> not linking between two files
+*/
+
+// 15/10/2022
+/*
+DATA TYPE
+(1) inbuilt
+(2) user defined 	-> structures (small bro of class(in C++))
+
+// STRUCTURE SYNTAX
+struct structure-name{
+	//code
+}; 		//semicolon must
+
+// STRUCTURES RULES:-
+(1) no two members can have same name even if their data types are different
+e.g. -> int roll, float roll {error}
+(2) no memory space will be allocated by the structure until an object is created
+(3) object of empty structure takes 1 byte storage in memory
+
+struct stad{
+	int roll;
+	char name[30];
+	float roll;
+};		-> error since 2 times declaration  of roll
+
+struct abc{
+	int x;
+	int y;
+	int z;
+}		-> error since no semicolon
+
+// OBJECT CREATION
+
+struct student{
+	int roll;
+	char name[30];
+	float marks;
+};
+int main(){
+	struct student a;		//-> declaration of object same as int a
+	struct student priti;
+	struct student kaushik;
+	struct student  priyanka;
+}
+
+// USER INPUT
+struct student{
+	int roll;
+	char name[30];
+	float marks;
+};
+int main(){
+	struct student kaushik;
+	scanf("%d %s %f",&kaushik.roll,&kaushik.name,&kaushik.marks);
+	printf("%d %s %f",kaushik.roll,kaushik.name,kaushik.marks);
+}
+// " . " dot is must & it signifies specifically the marks,roll,name of the
+// object kaushik
+
+// MANUAL INPUT
+struct student{
+	int roll;
+	char name[30];
+	float marks;
+};
+int main(){
+	struct student priti = {1,"priti",50};
+	// or
+	priti.roll = 2;
+	printf("%d %s %f",priti.roll,priti.name,priti.marks);
+}
+
+// ORDER OF INPUT
+struct student{
+	int roll;
+	char name[30];
+	float marks;
+};
+int main(){
+	struct student priti = {.marks=1,.name="priti",.roll=50};
+	printf("%d %s %f",priti.roll,priti.name,priti.marks);
+}
+	// if user input data in different order then we use . operator .name
+
+// ARRAY OF STRUCTURE
+-> here each block represent each different structure
+
+struct name
+{
+	int x,y,z;
+};
+int main(){
+	struct name p1 = {.y=0, .z =1, .x =2};
+	printf("%d %d %d",p1.x,p1.y,p1.z);
+}	// -> 2 0 1
+
+struct node
+{
+	int i;
+	int j;
+};
+struct node *s[10];		what is S?
+-> it represent an array, each element of which is a pointer to a struct of type node
+*/
+
+// 16/10/2022
+/*
+// NESTED STRUCTURE
+struct company{
+	int employeeid;
+	char companyName[20];
+	struct founder{
+		char ceo[10];
+	};
+	struct department{
+		char dep[10];
+	};
+};
+int main(){
+	struct company c;
+	c.employeeid = 123;
+	struct founder f;
+	c.f.ceo= "harry";
+	struct department D;
+	c.D.dep = "analyst";
+}
+// -> in nested structure from outside structure we have to go inside of
+// inside structure to access it
+
+struct student{
+	int id;
+	float marks;
+};
+
+struct student s1 = {1,90};
+struct student s2;
+s2 = s1;
+if (s1==s2) printf("yes");		❌ (not possible)
+if (s1.marks==s2.marks) printf("yes");		✔	(possible)
+// we can't directly compare two objects but we can compare their member id
+
+struct abc{
+
+}
+struct abc a;	size of a?
+-> 1 byte
+
+// Find area of rectangle using structure
+-> // ranju sir
+struct rectangle
+{
+	int l,b;
+};
+
+int main(){
+	struct rectangle r;
+	printf("enter length & breadth: \n");
+	scanf("%d %d", &r.l,&r.b);
+	int area = r.l*r.b;
+	printf("area of rectangle is %d",area);
+}
+// or Saumya da
+
+struct rectangle{
+	int length;
+	int breadth;
+};
+int areaOfRect(struct rectangle r){
+	return r.length*r.breadth;
+}
+
+int main(){
+	struct rectangle r;
+	r.length = 20;
+	r.breadth = 10;
+	int ans = areaOfRect(r);
+	printf("%d",ans);
+}
+
+// Add two complex number
+
+struct complex{
+	float real;
+	float img;
+};
+
+struct complex add(struct complex n1,struct complex n2){
+	struct complex temp;
+	temp.real = n1.real + n2.real;
+	temp.img = n1.img + n2.img;
+	return temp;
+}
+int main(){
+	struct complex c1;
+	struct complex c2;
+	struct complex ans;
+
+	c1.real = 3;
+	c1.img = 7;
+	c2.real = 7;
+	c2.img = 3;
+
+	ans = add(c1,c2);
+	printf("%.1f + %.1fi",ans.real,ans.img);
+}
+
+//Add Foot & Inches
+
+struct conversion{
+	int foot;
+	int inch;
+};
+struct conversion add(struct conversion n1,struct conversion n2){
+	struct conversion temp;
+	temp.foot = n1.foot + n2.foot;
+	temp.inch = n1.inch + n2.inch;
+
+	// more than or equals to 12 inches
+
+	if(temp.inch>=12){
+		temp.foot += (temp.inch/12);
+		// temp.inch %= (float)12;		-> not able to operate through floats
+		temp.inch %= 12;
+	}
+
+	// or
+
+	while(temp.inch>=12){
+		temp.inch -=12;
+		temp.foot++;
+	}
+	return temp;
+}
+int main(){
+	struct conversion c1;
+	struct conversion c2;
+	struct conversion ans;
+
+	c1.foot = 3;
+	c1.inch = 7;
+	c2.foot = 7;
+	c2.inch = 6;
+
+	ans = add(c1,c2);
+	// printf("%.2f foot & %.2f inches",ans.foot,ans.inch);
+	printf("%d foot & %d inches",ans.foot,ans.inch);
+
+}
+*/
+
+// 22/10/2022
+
+/*
+int fun(){
+	int a;
+	a =250;
+	return 0;
+}
+int main(){
+	int i;
+	i = fun();
+	printf("%d",i);
+	return 0;
+}		-> 0	//[since fun returns 0]
+(a) 250
+(b)	garbage
+(c)	0
+(d)	compiler error
+
+int fun(){
+	int a;
+	a =250;
+}
+int main(){
+	int i;
+	i = fun();
+	printf("%d",i);
+	return 0;
+}		-> 1	//[since successful execution of 'fun' returns '1']
+(a) 250
+(b)	0
+(c)	1
+(d)	garbage
+
+int main(){
+	main();
+	return 0;
+}	-> stackoverflow hence run time error
+
+int i=0;
+int main(){
+	i++;
+	printf("helo %d ",i);	-> runs for 64k times dont give any error
+	main();
+	return 0;
+}
+
+int _a_123(int num){	//num = 4
+	return (num++);		//num = 4 after return num becomes 5
+	//(but this num is call by value hence it doesn't matter)
+}
+int main(){
+	int num = _a_123(4);	//num = 4 stored
+	printf("%d",--num);		//--num = 3
+	return 0;
+}		-> 3
+(a)	4
+(b)	5
+(c)	3
+(d)	0
+
+int fun(int x,int y){		//x=25,y=25
+	return (x-(x==y));		//(25-(25==25)) => 25-1 => 24
+}
+int main(){
+	int a = 25;
+	int b = 24+1;		//b =25
+	int c;
+	printf("%d",fun(a,b));
+	return 0;
+}		-> 24
+
+int returns(int ret){	//ret = 4
+	ret += 5.01;		//ret = ret+5.01 => ret = 4+5.01 => ret = 9
+	return ret;
+}
+int main(){
+	int num = returns(sizeof(float));	//sizeof(float) = 4		//num = 9
+	printf("%d",++num);			//++num = 10
+	return 0;
+}		-> 10
+
+int main(){
+	int i = 5;
+	printf("%d",++i + ++i);		//6+7 overwrites 6 with 7 = 7+7 = 14
+}	-> 14
+
+int main(){
+	int i = 5;
+	printf("%d",++i + i++);		-> 13
+	printf("%d",i);		-> 7
+}
+
+int main(){
+	int i = 5;
+	i = ++i + i++;
+	printf("%d",i);
+}		-> 13
+
+int main(){
+	printf("%p",main());	//%p means a pointer
+}		-> prints address
+(a)	compile error
+(b)	runtime
+(c)	some address
+(d)	garbage values
+
+int main(){
+	int i = 5;
+	printf("%d %d %d %d %d",i++,i--,++i,--i,i);
+	return 0;
+}		-> 4 5 5 5 5
+// i	--i		++i		i--		i++
+//	5	(pre)	(pre)	(post)	(post)
+//	(pre) value of --i is overwrited by (pre) ++i
+
+correct syntax:-	-> option b
+(a)	int func();
+(b)	int func(int x){return ;}
+(c)	void func(int){printf("hello");}
+(d)	void func(x){printf("hello");}
+
+STATIC
+static int x;
+printf("%d",x);		-> 0 //(default value)
+
+int a;
+printf("%d",a);		-> garbage value
+
+int num = 5;
+// here func will be destroyed after call but static num
+// will be available throughout the program
+int fun(){
+	static int num = 2;		//num becomes 3 after ++ it
+	// will not get reinitialised again as 2
+	printf("%d",num);	//2 on 1st print
+	num++;		//num++ =3
+	return 0;
+}
+// if instead of static int num its int num ans will be 22
+// since num will be reinitialised as 2 again
+int main(){
+	fun();
+	fun();
+	return 0;
+}		-> 23
+
+// # lifespan of a static variable is throughout the full program
+*/
+
+// 30/10/2022
+/*
+GESTIMATES
+
+	product sale estimation
+all points to remember/consider
+(1)	age
+(2)	income
+(3)	calculation
+(4)	life span
+(5)	market share
+
+int i = 5;
+i = ++i + ++i + ++i;
+printf("%d",i);		-> 22 (7+7+8)
+
+int i = 12;
+printf("%d",i != 12);	// 12 != 12	=> false = 0
+int a = !i;
+if (a==12) printf("Yes");
+else printf("No");		-> 0No
+*/
+
+// 05/11/2022
+/*
+POINTER = its a variable which stores address of a variable
+
+int main(){
+	int a = 5;
+	int *ptr = &a;	// & = referencing
+	*ptr = 10;		// * = deferencing
+}
+
+int a = 10;
+printf("%d\n",&a);		// -> 1024
+printf("%d",&a+1);		// -> 1028
+		//	addrass + (no. * size of int/char)
+
+int a = 10;
+int *ptr = &a;
+printf("%d\n",a);		// -> 10
+printf("%d\n",*ptr);	// -> 10
+printf("%d\n",&a);		// -> 1024
+printf("%d\n",ptr);		// -> 1024
+printf("%d\n",&ptr);	// -> 2024
+
+POINTER TO POINTER (DOUBLE POINTER)
+= It is a pointer which stores address of another pointer
+
+			dptr		ptr			a
+values->	2024		1024		10
+address->	3024	<-	2024	<-	1024
+
+int a = 10;
+int *ptr = &a;
+int **dptr = &ptr;
+printf("%p\n",&a);		// -> 0061ff18
+printf("%p\n",ptr);		// -> 0061ff18
+printf("%p\n",dptr);	// -> 0061ff14
+printf("%p\n",a);		// -> 0000000a
+printf("%p\n",*ptr);	// -> 0000000a
+printf("%p\n",**dptr);	// -> 0000000a
+*/
+
+// 06/11/2022
+/*
+locally array size = 10^7
+globally array size = 10^8
+
+int a = 5;
+int *p = a;
+
+p++ =>
+p = p + (1*size of p) = 100 + 1*4 = 104
+
+p+=2 =>
+p = p + (2*size of p) = 100 + 2*4 = 108
+
+int a = 	[1,2,3,4,5,6,7]
+	index =  0 1 2 3 4 5 6
+
+// pointer(pointer location) is present at 1st bit of 1st byte of 4 bytes of 0th index of array
+
+int a = 5;
+int *p = &a;
+int **q = &p;
+q++;
+p++;		// -> working properly
+	// but theoretically error since dptr pointing a ptr which is pointing
+	// to a random location not an integer location
+
+// if 'q' is not pointing to 'p' & directly pointing to a which means
+// 'p' is no more pointing to 'a' then 'p' is called "Dangling Pointer"
+// [But 'q' cant point 'a' because 'q' is a 'double pointer' & cant point at a variable]
+
+int i = 3;
+int *j;
+int **k;
+j = &i;
+k = &j;
+k++;		// due to link break in k++
+printf(**k);		-> error
+
+int i = 3;
+int *j;
+j = &i;
+j++;
+printf("%d",*j);		-> garbage value
+(a) linker area
+(b) runtime error
+(c) compiler error
+(d) garbage value
+// when its a single pointer it can point to a random address but double
+// pointer pointing a random address is illogical
+
+#include <string.h>
+char *ptr = "hello";
+char a[22];
+strcpy(a,"world");
+printf("%s %s",ptr,a);
+
+char *ptr = "helloworld";
+printf(ptr+4);
+
+char *ptr = "biplab";
+printf("%c",*&*ptr);		-> b
+// * & cancel out and due to %c only char get print out
+
+char a = 30, b = 5 ;
+char *p = &a, *q = &b;
+printf("%d", p-q);		-> 1
+// p-q = difference between location(address) of a & b
+
+int a = 30, b = 5 ;
+int *p = &a, *q = &b;
+printf("%d", p-q);		-> 1
+*/
