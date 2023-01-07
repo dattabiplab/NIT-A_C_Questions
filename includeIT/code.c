@@ -1093,5 +1093,82 @@ int main()
 	// 	return 0;
 	// }
 
+	// 30/12/2022 		SAU
+	// int i = 5;
+	// i = ++i + ++i + ++i;
+	// printf("%d",i);
+
+	// int i = 12;
+	// printf("%d",i != 12);
+	// int a = !i;
+	// if (a==12) printf("Yes");
+	// else printf("No");
+
+	// 05/11/2022		SAU
+
+	// int a = 10;
+	// int *ptr = &a;
+	// printf("%d\n",a);
+	// printf("%d\n",*ptr);
+	// printf("%d\n",&a);
+	// printf("%d\n",ptr);
+	// printf("%d\n",&ptr);
+
+	// int a = 10;
+	// int *ptr = &a;
+	// int **dptr = &ptr;
+	// printf("%p\n",&a);
+	// printf("%p\n",ptr);
+	// printf("%p\n",dptr);
+	// printf("%p\n",a);
+	// printf("%p\n",*ptr);
+	// printf("%p\n",**dptr);
+
+	// 06/11/2022		SAI
+
+	// int a = 5;
+	// int *p = &a;
+	// int **q = &p;
+	// q++;
+	// p++;
+
+	// int i = 3;
+	// int *j;
+	// int **k;
+	// j = &i;
+	// k = &j;
+	// k++;
+	// printf(**k);
+
+	// int i = 3;
+	// int *j;
+	// j = &i;
+	// j++;
+	// printf("%d",*j);
+	// (a) linker area
+	// (b) runtime error
+	// (c) compiler error
+	// (d) garbage value
+
+	// #include <string.h>
+	// char *ptr = "hello";
+	// char a[22];
+	// strcpy(a,"world");
+	// printf("%s %s",ptr,a);
+
+	// char *ptr = "helloworld";
+	// printf(ptr+4);
+
+	// char *ptr = "biplab";
+	// printf("%c",*&*ptr);
+
+	// char a = 30, b = 5 ;
+	// char *p = &a, *q = &b;
+	// printf("%d", p-q);
+
+	// int a = 30, b = 5 ;
+	// int *p = &a, *q = &b;
+	// printf("%d", p-q);
+
 	return 0;
 }
